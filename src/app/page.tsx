@@ -111,9 +111,12 @@ export default async function Home() {
     return <div>Failed to load products</div>
   }
   type Product = {
-  id: number
-  name: string
-  price: number
+    Part_Number: string
+    Brand_Name: string
+    MRP: number
+  // id: number
+  // name: string
+  // price: number
 }
 
   return (
@@ -121,9 +124,9 @@ export default async function Home() {
       <h1>My E-Commerce Store</h1>
       <ul>
         {products?.map((p: Product) => (
-          <li key={p.id}>
-            <h3>{p.name}</h3>
-            <p>{p.price} ₹</p>
+          <li key={p.Brand_Name}>
+            <h3>{p.Part_Number}</h3>
+            <p>{p.MRP} ₹</p>
           </li>
         ))}
       </ul>
